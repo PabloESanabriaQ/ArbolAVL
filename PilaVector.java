@@ -4,20 +4,20 @@ import java.util.Vector;
 public class PilaVector {
     private static final int INICIAL = 19;
     private int cima;
-    private Vector<ArbolBinario> listaPila;
+    private Vector<Nodo> listaPila;
 
     public PilaVector(){
         cima = -1;
         listaPila = new Vector<>(INICIAL);
     }
 
-    public void insertar(ArbolBinario arbol) throws IOException{
+    public void insertar(Nodo nodo) throws IOException{
         cima++;
-        listaPila.addElement(arbol);
+        listaPila.addElement(nodo);
     }
 
-    public ArbolBinario quitar() throws Exception{
-        ArbolBinario aux;
+    public Nodo quitar() throws Exception{
+        Nodo aux;
         if(pilaVacia()){
             throw new Exception("Pila vacía, no se puede extraer.");
         }
@@ -27,7 +27,7 @@ public class PilaVector {
         return aux;
     }
 
-    public ArbolBinario cimaPila()throws Exception {
+    public Nodo cimaPila()throws Exception {
         if(pilaVacia()){
             throw new Exception("Pila vacía, no se puede extraer.");
         }
