@@ -39,4 +39,9 @@ public class Nodo{
         this.derecho = derecho;
     }
 
+    public void visitar(){
+        System.out.println("El nombre del perrito es: " + perrito.getNombre() 
+        + ". El nombre de su dueño es: " + perrito.getDuenio());
+    }
+
 }

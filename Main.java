@@ -21,6 +21,20 @@ public class Main {
     a1 = (Nodo) pila.quitar();
     a = ArbolBinario.nuevoArbol(a1,new Perro("Nerom", "Agus"), a2);
     arbol = new ArbolBinario(a);
+
+    System.out.println("");
+    System.out.println("Recorrido en preorden:");
+    System.out.println("");
+    arbol.preorden(a);
+    System.out.println("");
+    System.out.println("Recorrido en orden:");
+    System.out.println("");
+    arbol.inorden(a);
+    System.out.println("");
+    System.out.println("Recorrido en posorden:");
+    System.out.println("");
+    arbol.postorden(a);
+
     }
 
 }

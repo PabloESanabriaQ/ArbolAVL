@@ -9,4 +9,20 @@ public class Perro {
     public String ladrar(){
         return "WOOF WOOF";
     }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDuenio() {
+        return this.duenio;
+    }
+
+    public void setDuenio(String duenio) {
+        this.duenio = duenio;
+    }
 }
