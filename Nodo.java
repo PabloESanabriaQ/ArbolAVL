@@ -1,26 +1,17 @@
 public class Nodo{
-    protected Perro perrito;
+    protected Object tipoObjeto;
     protected Nodo izquierdo;
     protected Nodo derecho;
 
-    public Nodo(Perro perrito){
-        this.perrito = perrito;
+    public Nodo(Object tipoObjeto){
+        this.tipoObjeto = tipoObjeto;
         izquierdo = derecho = null;
     }
 
-    public Nodo(Nodo ramaIzquierda, Perro perrito, Nodo ramaDerecha){
-        this.perrito = perrito;
+    public Nodo(Nodo ramaIzquierda, Object tipoObjeto, Nodo ramaDerecha){
+        this.tipoObjeto = tipoObjeto;
         this.izquierdo = ramaIzquierda;
         this.derecho = ramaDerecha;
-    }
-
-
-    public Perro getPerrito() {
-        return this.perrito;
-    }
-
-    public void setPerrito(Perro perrito) {
-        this.perrito = perrito;
     }
 
     public Nodo getIzquierdo() {
@@ -39,9 +30,8 @@ public class Nodo{
         this.derecho = derecho;
     }
 
-    public void visitar(){
-        System.out.println("El nombre del perrito es: " + perrito.getNombre() 
-        + ". El nombre de su dueño es: " + perrito.getDuenio());
+    public void visitar(){        
+        System.out.println(tipoObjeto.toString());
     }
 
 }

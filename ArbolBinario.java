@@ -17,8 +17,8 @@ public class ArbolBinario {
         return raiz == null;
     }
 
-    public static Nodo nuevoArbol(Nodo ramaIzquierda, Perro perrito, Nodo ramaDerecha) {
-        return new Nodo(ramaIzquierda, perrito, ramaDerecha);
+    public static Nodo nuevoArbol(Nodo ramaIzquierda, Object tipoObjeto, Nodo ramaDerecha) {
+        return new Nodo(ramaIzquierda, tipoObjeto, ramaDerecha);
     }
 
     // Recorrido de un árbol binario en preorden

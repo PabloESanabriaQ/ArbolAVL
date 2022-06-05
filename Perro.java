@@ -25,4 +25,11 @@ public class Perro {
     public void setDuenio(String duenio) {
         this.duenio = duenio;
     }
+
+    @Override
+    public String toString() {
+        return " Nombre:'" + getNombre() + "'" +
+            ", Duenio:'" + getDuenio() + "'";
+    }
+
 }
