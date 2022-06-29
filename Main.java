@@ -1,40 +1,40 @@
 public class Main {
-    public static void main(String[] args) throws Exception {
-        
-    ArbolBinario arbol;
-    Nodo a1, a2, a;
-    PilaVector pila = new PilaVector();
-
-    a1 = ArbolBinario.nuevoArbol(null, new Perro("Floki", "Lou"), null);
-    a2 = ArbolBinario.nuevoArbol(null, new Perro("Rocki", "Lou"), null);
-    a = ArbolBinario.nuevoArbol(a1, new Perro("Lena", "Emma"), a2);
-
-    pila.insertar(a);
-
-    a1 = ArbolBinario.nuevoArbol(null, new Perro("Neo", "Vale"), null);
-    a2 = ArbolBinario.nuevoArbol(null, new Perro("Pitu", "Vale"), null);
-    a = ArbolBinario.nuevoArbol(a1, new Perro ("Birra", "Mica"), a2);
-
-    pila.insertar(a);
-
-    a2 = (Nodo) pila.quitar();
-    a1 = (Nodo) pila.quitar();
-    a = ArbolBinario.nuevoArbol(a1,new Perro("Nerom", "Agus"), a2);
-    arbol = new ArbolBinario(a);
-
-    System.out.println("");
-    System.out.println("Recorrido en preorden:");
-    System.out.println("");
-    arbol.preorden(a);
-    System.out.println("");
-    System.out.println("Recorrido en orden:");
-    System.out.println("");
-    arbol.inorden(a);
-    System.out.println("");
-    System.out.println("Recorrido en posorden:");
-    System.out.println("");
-    arbol.postorden(a);
-
+    static final int TOPEMAX = 999;
+    public static void main(String [] a) throws Exception {
+        ArbolAvl avl = new ArbolAvl();
+		Numero elemento;
+		int numNodos;
+		while (altura(avl.raizArbol()) < 5) {
+            elemento = new Numero((int)(Math.random()*TOPEMAX) + 1);
+            avl.insertar(elemento);
+        }
+        numNodos = visualizar(avl.raizArbol());
+		System.out.println("\n Número de nodos: " + numNodos);
     }
 
+    static int visualizar (NodoAvl r){ //escribir claves de árbol
+		 if (r != null) {
+            int cuantosIzquierda, cuantosDerecha;
+            cuantosIzquierda = visualizar((NodoAvl)r.getIzquierdo());
+            System.out.print(r.getRaiz());
+            cuantosDerecha = visualizar((NodoAvl)r.getDerecho());
+            return cuantosIzquierda + cuantosDerecha + 1;
+        } else{
+            return 0;
+        }
+    }
+    
+    static int altura(NodoAvl r) {// calcula y devuelve altura
+        if (r != null){
+            return mayor(altura((NodoAvl)r.getIzquierdo()), altura((NodoAvl)r.getDerecho())) + 1;
+        }
+		 else {
+            return 0;
+         }
+        }
+        
+    static int mayor (int x, int y){
+        return (x > y ? x : y);
+    }
+    
 }
