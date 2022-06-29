@@ -47,4 +47,13 @@ public class ArbolBinario {
             r.visitar();
         }
     }
+
+    // Encontrar número nodos de un árbol binario
+    public static int numNodos(Nodo raiz){
+        if(raiz == null){
+            return 0;
+        } else {
+            return 1 + numNodos(raiz.getDerecho()) + numNodos(raiz.getIzquierdo());
+        }
+    }
 }
