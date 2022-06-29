@@ -1,21 +1,25 @@
 public class Nodo{
-    protected Object tipoObjeto;
+    protected Object objetoCualquiera;
     protected Nodo izquierdo;
     protected Nodo derecho;
 
-    public Nodo(Object tipoObjeto){
-        this.tipoObjeto = tipoObjeto;
+    public Nodo(Object objetoCualquiera){
+        this.objetoCualquiera = objetoCualquiera;
         izquierdo = derecho = null;
     }
 
-    public Nodo(Nodo ramaIzquierda, Object tipoObjeto, Nodo ramaDerecha){
-        this.tipoObjeto = tipoObjeto;
+    public Nodo(Nodo ramaIzquierda, Object objetoCualquiera, Nodo ramaDerecha){
+        this.objetoCualquiera = objetoCualquiera;
         this.izquierdo = ramaIzquierda;
         this.derecho = ramaDerecha;
     }
 
     public Object getRaiz(){
-        return tipoObjeto;
+        return objetoCualquiera;
+    }
+
+    public void setRaiz(Object nuevoObjetoRaiz){
+        this.objetoCualquiera = nuevoObjetoRaiz;
     }
 
     public Nodo getIzquierdo() {
@@ -35,7 +39,7 @@ public class Nodo{
     }
 
     public void visitar(){        
-        System.out.println(tipoObjeto.toString());
+        System.out.println(objetoCualquiera.toString());
     }
 
 }
