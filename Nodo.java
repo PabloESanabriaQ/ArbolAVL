@@ -14,6 +14,10 @@ public class Nodo{
         this.derecho = ramaDerecha;
     }
 
+    public Object getRaiz(){
+        return tipoObjeto;
+    }
+
     public Nodo getIzquierdo() {
         return this.izquierdo;
     }
